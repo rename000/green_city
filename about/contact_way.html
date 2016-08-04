@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../static/css/common.css" />
+	</head>
+	<body>
+		<section class="m-section">
+			<nav class="navbar " style="padding: 20px 100px;margin-bottom: 40px;border-bottom: 1px solid gainsboro;">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#" style="text-align: center;">
+			      	<img src="../static/img/green_logo.png" style="width: 220px;margin-top: -38px;"/>
+			      </a>
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right m-index-menu">
+			        <li><a href="../index/index.html">首页</a></li>
+			        <li class="dropdown m-dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">健康咨询 <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="../healthInfo/good_health.html">养生</a></li>
+			            <li><a href="#">母婴</a></li>
+			            <li><a href="#">慢性病</a></li>
+			            <li><a href="#">亚健康</a></li>
+			            <li><a href="#">防癌</a></li>
+			          </ul>
+			        </li>
+			        <li><a href="../product/product_service.html">产品服务</a></li>
+			        <li class="m-active"><a href="../about/about_us.html">关于我们</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+			
+			<div class="row me-bottom-hr m-container">
+				<div class="col-xs-2 col-xs-offset-1 m-list-menu" >
+					<ul class="list-group">
+					  <li class="list-group-item"><a href="../about/about_us.html">公司介绍</a></li>
+					  <li class="list-group-item"><a href="../about/company_state.html">公司动态</a></li>
+					  <li class="list-group-item item-active"><a href="../about/contact_way.html">联系方式</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-8" style="margin: auto;text-align: center;">
+					
+						<div class="baiduMap" style="margin-top: 15px;height: 680px;border: 1px solid gainsboro;">
+   							<div class="row">
+									<div class="col-xs-7">
+										<div id="l-map"></div>
+									</div>
+									<div  class="col-xs-5">
+										
+										    <div class="me-inline" style="padding: 6px 0;padding-right: 20px;text-align: left;">
+												<strong>所属区域:</strong><br>			
+												<input type="text" class="form-control" id="suggestId" size="20" value="" />
+												<!--<span style="padding-left: 5px;vertical-align: bottom;width: 50px;">-->
+													<!--<a class="btn btn-primary" style="height: 34px;">搜索</a>-->
+													<!--<span>-->
+											</div>
+											<div id="r-result" style="padding-right: 20px;"></div>	
+											<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+											
+									</div>
+							</div>			
+   						</div>
+		
+				</div>	
+			</div>
+			
+			<div class="m-solid"></div>
+			<div class="row footer-bottom-hr">
+				<div class="col-xs-4 col-xs-offset-1">
+					<select class="form-control m-select">
+						<option value="1">中文</option>
+						<option value="2">英文</option>
+						<option value="3">日文</option>
+					</select>
+				</div>
+				<div class="col-xs-6 text-right">
+					<span style="padding-right: 50px;">联系电话:400-0000-000</span>
+					<span>邮箱:loucieng@sidlhgh.com</span>
+				</div>
+			</div>
+			
+		</section>
+	</body>
+</html>
+<script src="../static/js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3x3naWhVeL9a4BPcZbqWHydj&services=true"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+
+	var map = new BMap.Map("l-map");
+//	map.centerAndZoom("杭州",12);                   // 初始化地图,设置城市和地图级别。
+	var point = new BMap.Point(120.105512,30.290087);
+	map.centerAndZoom(point,14);
+	var local = new BMap.LocalSearch(map, {
+		renderOptions: {map: map, panel: "r-result"}
+	});
+	map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+	local.search("绿城医院");
+	
+
+	var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+		{"input" : "suggestId"
+		,"location" : map
+	});
+
+	ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	var str = "";
+		var _value = e.fromitem.value;
+		var value = "";
+		if (e.fromitem.index > -1) {
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+		
+		value = "";
+		if (e.toitem.index > -1) {
+			_value = e.toitem.value;
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		G("searchResultPanel").innerHTML = str;
+	});
+
+	var myValue;
+	ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+	var _value = e.item.value;
+		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+		
+		setPlace();
+	});
+
+	function setPlace(){
+		map.clearOverlays();    //清除地图上所有覆盖物
+		local.search(myValue);
+	}
+</script>

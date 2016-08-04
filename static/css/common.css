@@ -39,6 +39,9 @@ a {
 .m-index-menu li a {
 	color: #727272;
 }
+.me-inline span {
+	display: table-cell;
+}
 /*m-dropdown*/
 .m-dropdown .dropdown-menu {
 	background-color: rgba(108,157,108,.8);
@@ -53,6 +56,9 @@ a {
 .m-active a{
 	border-bottom: 2px solid #3b8555;
 } 
+.dropdown-menu a {
+	border: 0;
+}
 .m-solid {
 	margin-top: 20px;
 	padding: 10px;
@@ -134,4 +140,17 @@ a {
 .m-media-object {
 	margin-right: 10px;
 	margin-bottom: 10px;
+}
+
+/*contact_way*/
+#l-map {
+	height: 678px;
+}
+.btn-primary {
+	border-color: #3b8555;
+	background-color: #3b8555;
+}
+.btn-primary:hover,.btn-primary:active,.btn-primary:focus {
+	border-color: #43a766 !important;
+	background-color: #43a766 !important;
 }

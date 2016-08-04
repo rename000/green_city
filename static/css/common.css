@@ -92,7 +92,7 @@ a {
 .product-row .col-xs-6 {
 	padding-bottom: 0;
 }
-.list-group .m-active {
+.list-group .list-active {
 	color: #3b8555;
 	border-bottom: 3px solid #3b8555;
 }

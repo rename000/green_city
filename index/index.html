@@ -3,45 +3,34 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../static/css/common.css" />
 	</head>
 	<body>
 		<section class="m-section">
 			<nav class="navbar " style="padding: 20px 100px;margin-bottom: 40px;border-bottom: 1px solid gainsboro;">
 			  <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
 			      <a class="navbar-brand" href="#" style="text-align: center;">
-			      	<!--<img src="img/green_logo.png" style="width: 180px;margin-top: -33px;"/>-->
-			      	<img src="img/green_logo.png" style="width: 220px;margin-top: -38px;"/>
+			      	<img src="../static/img/green_logo.png" style="width: 220px;margin-top: -38px;"/>
 			      </a>
 			    </div>
-			
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    	
 			      <ul class="nav navbar-nav navbar-right m-index-menu">
-			        <li class="m-active"><a href="index.html">首页</a></li>
+			        <li class="m-active"><a href="../index/index.html">首页</a></li>
 			        <li class="dropdown m-dropdown">
-			          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">健康咨询 <span class="caret"></span></a>
+			          <a href="../healthInfo/goodHealth.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">健康咨询 <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="#">养生</a></li>
+			            <li><a href="../healthInfo/good_health.html">养生</a></li>
 			            <li><a href="#">母婴</a></li>
 			            <li><a href="#">慢性病</a></li>
 			            <li><a href="#">亚健康</a></li>
-			            <!--<li role="separator" class="divider"></li>-->
 			            <li><a href="#">防癌</a></li>
 			          </ul>
 			        </li>
-			        <li><a href="product/product_service.html">产品服务</a></li>
-			        <li><a href="about/about_us.html">关于我们</a></li>
+			        <li><a href="../product/product_service.html">产品服务</a></li>
+			        <li><a href="../about/about_us.html">关于我们</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -61,13 +50,13 @@
 					   <!-- 轮播（Carousel）项目 -->
 					   <div class="carousel-inner">
 					      <div class="item active">
-					         <img src="img/gc_index.png" alt="First slide">
+					         <img src="../static/img/gc_index.png" alt="First slide">
 					      </div>
 					      <div class="item">
-					         <img src="img/gc_index.png" alt="Second slide">
+					         <img src="../static/img/gc_index.png" alt="Second slide">
 					      </div>
 					      <div class="item">
-					         <img src="img/gc_index.png" alt="Third slide">
+					         <img src="../static/img/gc_index.png" alt="Third slide">
 					      </div>
 					   </div>
 					   <!-- 轮播（Carousel）导航 -->
@@ -79,6 +68,7 @@
 										
 				</div>
 			</div>
+			
 			<div class="m-solid"></div>
 			<div class="row footer-bottom-hr">
 				<div class="col-xs-4 col-xs-offset-1">
@@ -93,11 +83,12 @@
 					<span>邮箱:loucieng@sidlhgh.com</span>
 				</div>
 			</div>
+			
 		</section>
 	</body>
 </html>
-<script src="js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../static/js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	$('#myCarousel').carousel({interval: 4000})
 </script>
